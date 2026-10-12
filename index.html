@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE METAL HUB - Durgapur Steel Trading & Manufacturing | MSME Registered</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Oswald:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--orange:#ff6a00;--dark:#121212;--gray:#f5f5f7;--green:#25D366}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
+body{background:#fff;color:var(--dark)}
+header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e5e5e5;display:flex;justify-content:space-between;align-items:center;padding:12px 5%;flex-wrap:wrap;gap:10px}
+.logo{font-family:Oswald,sans-serif;font-size:22px;font-weight:800;letter-spacing:1px}.logo span{color:var(--orange)}
+.badges{display:flex;gap:8px;flex-wrap:wrap}.badge{font-size:10px;font-weight:700;background:#000;color:#fff;padding:5px 8px;border-radius:4px}.badge.green{background:#0a7a2e}
+.cart-btn{background:var(--dark);color:#fff;border:none;padding:10px 18px;border-radius:30px;cursor:pointer;font-weight:600}
+.hero{background:linear-gradient(105deg,#121212 0%,#2a2a2a 100%);color:#fff;padding:60px 5%;display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
+.hero h1{font-family:Oswald,sans-serif;font-size:48px;line-height:1.1;text-transform:uppercase}.hero h1 b{color:var(--orange)}
+.hero p{margin:18px 0;color:#bbb;font-size:16px;line-height:1.6}
+.btn{padding:14px 22px;border-radius:8px;font-weight:700;border:none;cursor:pointer;text-decoration:none;display:inline-block;text-align:center}
+.btn-orange{background:var(--orange);color:#fff}.btn-outline{background:transparent;border:2px solid #fff;color:#fff}
+section{padding:50px 5%}
+.section-title{font-family:Oswald,sans-serif;font-size:32px;text-transform:uppercase;margin-bottom:8px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{border:1px solid #e9e9e9;border-radius:14px;overflow:hidden;background:#fff}
+.card-img{height:160px;background:#f5f5f7;display:flex;align-items:center;justify-content:center;font-size:48px}
+.card-body{padding:16px}.price{color:var(--orange);font-weight:800;margin:6px 0}
+.add-btn{width:100%;margin-top:10px;background:#111;color:#fff;padding:11px;border:none;border-radius:8px;font-weight:700;cursor:pointer}
+.trust{background:#f9f9f9;border-top:1px solid #eee;border-bottom:1px solid #eee;display:grid;grid-template-columns:1fr 1fr;gap:30px}
+#cartDrawer{position:fixed;right:-420px;top:0;width:400px;max-width:90%;height:100%;background:#fff;box-shadow:-10px 0 30px rgba(0,0,0,.15);z-index:200;transition:.3s;padding:20px;display:flex;flex-direction:column}
+#cartDrawer.open{right:0}
+.cart-item{display:flex;justify-content:space-between;margin:12px 0;border-bottom:1px dashed #ddd;padding-bottom:10px;font-size:14px}
+.wa-btn{background:var(--green);color:#fff;padding:14px;border:none;width:100%;border-radius:10px;font-weight:800;cursor:pointer;margin-top:12px}
+footer{background:#0f0f0f;color:#aaa;padding:40px 5%;font-size:13px}
+@media(max-width:768px){.hero{grid-template-columns:1fr}.trust{grid-template-columns:1fr}.hero h1{font-size:36px}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">THE <span>METAL HUB</span></div>
+<div class="badges"><span class="badge">TRADE LICENSE VERIFIED</span><span class="badge green">MSME UDYAM REGISTERED</span><span class="badge green">GST VERIFIED</span></div>
+<button class="cart-btn" onclick="openCart()">🛒 Cart (<span id="cartCount">0</span>)</button>
+</header>
+<div class="hero">
+<div>
+<h1>Durgapur's Trusted <b>Steel & Iron Hub</b></h1>
+<p>Based at New Steel Park, Main Gate, Link Road. We are a <b>Micro Enterprise - Manufacturing & Trading</b> registered under Ministry of MSME, Govt. of India and Durgapur Municipal Corporation. GST Registered since 2018.</p>
+<a href="#products" class="btn btn-orange">View Products</a>
+<div style="margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+<div style="background:rgba(255,255,255,0.07);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);font-size:12px"><b style="color:#ff6a00">LOCATION</b><br>19/N Main Gate Link Road, New Steel Park, Durgapur - 713203</div>
+<div style="background:rgba(255,255,255,0.07);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);font-size:12px"><b style="color:#ff6a00">TYPE</b><br>Manufacturing + Trading, Ward 13, Paschim Bardhaman</div>
+<div style="background:rgba(255,255,255,0.07);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);font-size:12px"><b style="color:#ff6a00">VERIFIED</b><br>Udyam | GST | Trade License</div>
+</div>
+</div>
+<div style="background:#fff;border-radius:16px;padding:20px;color:#000">
+<h3>Why Choose Us?</h3><br>
+<p style="font-size:14px;line-height:1.7">✓ Direct from Steel Park - No Middleman<br>✓ GST Invoice Available<br>✓ Bulk & Retail<br>✓ Same Day Dispatch in Durgapur<br>✓ MSME Benefits for Buyers</p><br>
+<div style="background:#f5f5f5;padding:12px;border-radius:8px;font-size:12px"><b>Proprietor:</b> Syed Anwar Ahmed<br><b>Business:</b> THE METAL HUB<br><b>Since:</b> 2018</div>
+</div>
+</div>
+<section id="products">
+<h2 class="section-title">Our Products</h2>
+<p style="color:#777;margin-bottom:28px">All prices Ex-Steel Park, Durgapur. Add to cart and enquire via WhatsApp.</p>
+<div class="products" id="productGrid"></div>
+</section>
+<section class="trust">
+<div>
+<h2 class="section-title" style="font-size:24px">Business Credentials</h2>
+<ul style="list-style:none;margin-top:12px;line-height:2">
+<li>✓ Trade License: Durgapur Municipal Corporation</li>
+<li>✓ Udyam: Ministry of MSME - MANUFACTURING - Micro</li>
+<li>✓ GST: Regular Scheme - Proprietorship - Since 07-07-2018</li>
+<li>✓ Address: New Steel Park, Durgapur, WB - 713203</li>
+</ul>
+</div>
+<div style="background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:20px">
+<h3>How to Order?</h3><br>
+<p style="font-size:14px;line-height:1.8">1. Add products to Cart<br>2. Click Checkout via WhatsApp<br>3. Your list auto-sends to us<br>4. We send GST Quote in 10 mins<br>5. Pay via UPI / Bank</p>
+</div>
+</section>
+<footer>
+<p><b style="color:#fff">THE METAL HUB</b> - Proprietorship by Syed Anwar Ahmed - 19/N Main Gate Link Road, New Steel Park, Durgapur 713203<br><br>GitHub Pages Free Hosting - Replace waNumber in code with your WhatsApp number.</p>
+</footer>
+<div id="cartDrawer">
+<div style="display:flex;justify-content:space-between;align-items:center"><h3>Your Cart</h3><button onclick="closeCart()" style="border:none;background:#eee;padding:6px 10px;border-radius:6px;cursor:pointer">X</button></div>
+<div id="cartItems" style="flex:1;overflow:auto;margin-top:16px"><p style="color:#888;font-size:14px">Cart is empty.</p></div>
+<div style="border-top:1px solid #eee;padding-top:12px">
+<input id="custName" placeholder="Your Name / Company" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:8px;margin-bottom:8px">
+<input id="custPhone" placeholder="Mobile Number" style="width:100%;padding:10px;border:1px solid #ddd;border-radius:8px;margin-bottom:8px">
+<button class="wa-btn" onclick="checkoutWA()">Checkout via WhatsApp</button>
+</div>
+</div>
+<script>
+const products=[
+{id:1,name:"MS Wheel Hub / Metal Hub",price:"Price on Request",desc:"Heavy duty manufacturing. Custom sizes.",icon:"⚙️"},
+{id:2,name:"MS Plates & Sheets",price:"Rs 52 / kg onwards",desc:"2mm to 25mm thickness, all sizes.",icon:"🔩"},
+{id:3,name:"MS Pipes - Round / Square",price:"Rs 54 / kg onwards",desc:"19mm to 200mm dia. ISI marked.",icon:"🛠️"},
+{id:4,name:"Angle, Channel, Beam",price:"Price on Request",desc:"MS Angle, Channel, Joist, Beam stock.",icon:"🏗️"},
+{id:5,name:"Metal Scrap",price:"Market Rate",desc:"Industrial waste, off-cuts, bulk.",icon:"♻️"},
+{id:6,name:"Custom Fabrication Job Work",price:"As per Drawing",desc:"Manufacture as per sample/drawing.",icon:"🏭"}
+];
+let cart=[];
+function renderProducts(){
+let grid=document.getElementById('productGrid');
+grid.innerHTML=products.map(p=>`
+<div class="card">
+<div class="card-img">${p.icon}</div>
+<div class="card-body">
+<h3>${p.name}</h3>
+<div class="price">${p.price}</div>
+<p style="font-size:13px;color:#666">${p.desc}</p>
+<button class="add-btn" onclick="addToCart(${p.id})">Add to Enquiry</button>
+</div>
+</div>`).join('');
+}
+function addToCart(id){
+let prod=products.find(x=>x.id==id);
+let exist=cart.find(x=>x.id==id);
+if(exist){exist.qty++}else{cart.push({...prod,qty:1})}
+updateCart();openCart();
+}
+function updateCart(){
+document.getElementById('cartCount').innerText=cart.reduce((a,b)=>a+b.qty,0);
+let div=document.getElementById('cartItems');
+if(cart.length==0){div.innerHTML='<p style="color:#888">Cart empty</p>';return}
+div.innerHTML=cart.map(c=>`<div class="cart-item"><span><b>${c.name}</b><br><small>${c.price} x ${c.qty}</small></span><button onclick="removeCart(${c.id})" style="border:none;background:none;color:red;cursor:pointer">Remove</button></div>`).join('');
+}
+function removeCart(id){cart=cart.filter(c=>c.id!=id);updateCart()}
+function openCart(){document.getElementById('cartDrawer').classList.add('open')}
+function closeCart(){document.getElementById('cartDrawer').classList.remove('open')}
+function checkoutWA(){
+if(cart.length==0){alert('Add product first');return}
+let name=document.getElementById('custName').value||'Customer';
+let phone=document.getElementById('custPhone').value||'';
+let msg=`*New Enquiry - THE METAL HUB*%0A%0AName: ${name}%0APhone: ${phone}%0A%0AProducts:%0A`+cart.map(c=>`- ${c.name} (${c.price}) Qty: ${c.qty}`).join('%0A')+`%0A%0APlease send GST quote.`;
+let waNumber='919999999999';
+window.open(`https://wa.me/${waNumber}?text=${msg}`,'_blank');
+}
+renderProducts();
+</script>
+</body>
+</html>
